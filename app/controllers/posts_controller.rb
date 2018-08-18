@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
 # view
     def new
+        @post = Post.new
     end
 
     def create 
