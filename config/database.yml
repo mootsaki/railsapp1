@@ -1,0 +1,26 @@
+# PostgreSQL. Versions 9.1 and up are supported.
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: railsapp1_development
+  username: railsapp1dev
+  password: Wookiedev
+  host: localhost
+
+test:
+  <<: *default
+  database: railsapp1_test
+  username: railsapp1test
+  password: Wookietest
+  host: localhost
+
+production:
+  <<: *default
+  database: railsapp1_production
+  username: railsapp1prod
+  password: Wookieprod
+  host: localhost
