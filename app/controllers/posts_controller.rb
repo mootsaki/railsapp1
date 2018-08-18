@@ -15,6 +15,8 @@ class PostsController < ApplicationController
     end
 
     def create 
+        @post = Post.new(post_params)
+        @post.save
     end
 
     def edit
@@ -26,4 +28,7 @@ class PostsController < ApplicationController
     def delete
     end
 
+    def post_params
+    params.require(:post).permit(:title, :body)
+    end
 end
