@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
 #view
     def index
+        @posts=Post.all
     end
 # view
     def show
