@@ -4,6 +4,7 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
+#Dev database connection configuration
 development:
   <<: *default
   database: railsapp1_development
@@ -11,6 +12,7 @@ development:
   password: Wookiedev
   host: localhost
 
+#Test database connection configuration
 test:
   <<: *default
   database: railsapp1_test
@@ -18,6 +20,7 @@ test:
   password: Wookietest
   host: localhost
 
+#Production database connection configuration
 production:
   <<: *default
   database: railsapp1_production
